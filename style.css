@@ -1,0 +1,237 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+body{
+    background-color: #1f2833;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    background-color: #45a29e;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+header h4{
+  padding-top: 8px;
+}
+.note-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     /* border: 2px solid red; */
+    margin-top: 15px;
+}
+img{
+    width: 300px;
+}
+#create-title{
+    display: block;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #66fcf1;
+    outline: none;
+    margin-bottom: 20px;
+    width: 300px;
+    padding: 0 8px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+#create-description{
+    display: block;
+    background-color: transparent;
+    border: 2px solid #66fcf1;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 0 7px;
+    width: 650px;
+    height: 100px;
+    font-size: 18px;
+    font-weight: 500;
+}
+#create-btn{
+    cursor: pointer;
+    position: relative;
+    padding: 7px 18px;
+    font-size: 18px;
+    color: #45a29e;
+    border: 2px solid #45a29e;
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+  }
+  
+  #create-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: #66fcf1;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  #create-btn:hover::before {
+    scale: 3;
+  }
+  
+  #create-btn:hover {
+    color: #212121;
+    scale: 1.1;
+    box-shadow: 0 0px 10px #45a29e;
+  }
+  
+  #create-btn:active {
+    scale: 1;
+  }
+  
+  .note-box{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .note {
+    border: 2px solid #66fcf1;
+    border-radius: 15px;  
+    margin: 45px;
+    /* height: 250px; */
+  }
+  
+  .note .note-title{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 10px;
+    width: 80%;
+    font-weight: 500;
+  }
+  .note .note-description{
+    display: block;
+    /* border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px; */
+    background-color: white;
+    outline: none;
+    border: none;
+    padding: 10px;
+    font-weight: 500;
+    border-top: 2px solid white;
+    color: black;
+    resize: none;
+  }
+  .note hr{
+    background-color: white;
+    height: 2px;
+  }
+  .note i{
+    cursor: pointer;
+    margin-left: 20px;
+  }
+
+  .display-date{
+    font-size: 13px;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 7px;
+  }
+
+  /* responsiveness starts here */
+
+  /* for laptop */
+
+  @media only screen and (max-width: 1200px){
+    .note-container{
+      /* border: 2px solid red; */
+      justify-content: space-around;
+    }
+
+    #create-description{
+      width: 500px;
+    }
+    .note{
+      margin: 20px;
+    }
+  }
+
+  /* for tablet */
+
+  @media only screen and (max-width: 992px){
+
+    #create-description{
+      width: 400px;
+    }
+   .image img{
+    width: 250px;
+   }
+   .note{
+    margin: 35px;
+   }
+   #create-btn{
+    background-color: #45a29e;
+    color: white;
+    font-weight: 100;
+   }
+  }
+
+  /* for below than 768px */
+
+  @media only screen and (max-width: 768px){
+    .note-container{
+      flex-direction: column-reverse;
+      margin-top: 0;
+      
+    }
+    .image img{
+      width: 200px;
+    }
+    .create-note{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .create-note h1{
+      padding-bottom: 20px;
+    }
+    ::-webkit-input-placeholder{
+      text-align: center;
+    }
+    .note-box{
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (max-width: 450px){
+    #create-title{
+      width: 250px;
+    }
+    #create-description{
+      width: 300px;
+    }
+    #create-btn{
+      width: 250px;
+    }
+    #create-btn:hover::before,
+  #create-btn:hover {
+    /* Remove the hover and active effects by setting them to initial values */
+    color: white;
+    scale: initial;
+    box-shadow: initial;
+  }
+    .note{
+      width: 300px;
+    }
+    .note-description{
+      width: 100%;
+    }
+  }
